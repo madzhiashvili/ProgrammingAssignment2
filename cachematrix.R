@@ -5,14 +5,19 @@
 ## function creates a matrix cache object
 ## before computing the inverse of the matrix we assign an empty matrix
 makeCacheMatrix <- function(x = matrix()) {
+  # hold space for inverse with empty matrix
   inverse_matrix <- matrix()
+  # set local values
   set <- function(y) {
     x <<- y
     inverse_matrix <<- matrix()
   }
   
+  # get function returns x
   get <- function(){x}
+  # set inverse assigns inverted matrix to local variable inverse matrix
   set_inverse <- function(inverted_matrix){inverse_matrix <<- inverted_matrix}
+  # returns inverse 
   get_inverse <- function(){inverse_matrix}
   list(set=set,get=get,
        set_inverse=set_inverse,
